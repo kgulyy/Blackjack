@@ -12,13 +12,16 @@ Game::Game(const vector<string> &names) {
   }
   // засевает генератор случайных чисел
   srand(static_cast<unsigned int>(time(0)));
-  m_Deck.Populate();
-  m_Deck.Shuffle();
 }
 
 Game::~Game() {}
 
 void Game::Play() {
+  // очищает, создает и тосует колоду перед каждым коном
+  m_Deck.Clear();
+  m_Deck.Populate();
+  m_Deck.Shuffle();
+
   // раздает каждому игроку по две стартовые карты
   vector<Player>::iterator pPlayer;
   for (int i = 0; i < 2; ++i) {

@@ -1,6 +1,7 @@
 #include "Card.h"
 #include "GenericPlayer.h"
 #include "Game.h"
+#include <limits>
 
 // прототипы финкций
 ostream& operator<<(ostream& os, const Card& aCard);
@@ -12,6 +13,10 @@ int main() {
   while (numPlayers < 1 || numPlayers > 7) {
     cout << "How many players? (1-7): ";
     cin >> numPlayers;
+    if (cin.fail()) {
+      std::cin.clear();
+      std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    }
   }
   vector<string> names;
   string name;

@@ -31,6 +31,7 @@ void Deck::Deal(Hand& aHand) {
     m_Cards.pop_back();
   } else {
     cout << "Out of cards. Unable to deal.";
+    exit(0);
   }
 }
 

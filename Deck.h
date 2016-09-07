@@ -8,7 +8,7 @@
 #include "Hand.h"
 #include "GenericPlayer.h"
 
-class Deck : Hand {
+class Deck : public Hand {
  public:
   Deck();
   virtual ~Deck();
